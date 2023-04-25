@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Chennai House Price Predictor</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    </head>
+    
+<body style="background:rgb(5, 5, 39)">
+    <section class="header">
+<div class="login"  >
+    
+        <h1  style="text-align: center;color: rgb(252, 252, 52);" >Chennai House price Predictor
+
+        </h1>
+        <div class="heads">
+            <h3 style="text-align: center;color: bisque;">
+                Webapp that predicts sales price of a house in chennai.
+            </h3>
+        </div>
+    
+<div class="section2">
+    
+    
+    <form action="{{url_for('predict')}}"method="post" class="box">
+        <input type="text" name="INT_SQFT" placeholder="Area in Square feat" required="required"/><br>
+        <input type="text" name="DIST_MAINROAD" placeholder="distance from main road" required="required"/><br>
+        <input type="text" name="N_BEDROOM" placeholder="Number of Bedroom" required="required"/><br>
+        <input type="text" name="N_BATHROOM" placeholder="Number of Bathroom" required="required"/><br>
+        <input type="text" name="N_ROOM" placeholder="number of room" required="required"/><br>
+        <input type="text" name="QS_ROOMS" placeholder="1-5Quality of rooms" required="required"/><br>
+        <input type="text" name="QS_BATHROOM" placeholder="1-5Quality of bathrooms" required="required"/><br>
+        <input type="text" name="QS_BEDROOM" placeholder="1-5Quantity of bedroom" required="required"/><br>
+        <input type="text" name="QS_OVERALL" placeholder="1-5 overall quality" required="required"/><br>
+        <input type="text" name="REG_FEE" placeholder="Registration fee" required="required"/><br>
+        <input type="text" name="COMMIS" placeholder="Commisions" required="required"/><p>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Sales Price</button></p>
+        
+
+    </form>
+    <h4 style="color:yellowgreen;">{{prediction_text}}</h4>
+    
+</div>
+</div>
+</section>
+</body>
+</html>
